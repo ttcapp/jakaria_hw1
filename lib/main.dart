@@ -19,18 +19,32 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height= MediaQuery.of(context).size.height;
+    double width= MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Colors.purple,
                 title: Text("MY FIRST APPLICATION"),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ErYG1XvLfC20RitfecW2b_1q2WYwTA1t9Q&usqp=CAU"),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                height: width*0.2,
+                width: width*0.2,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.green, width: 16),
+                  borderRadius: BorderRadius.circular(200),
+                  image: DecorationImage(
+                      image: NetworkImage("https://cdn.iconscout.com/icon/free/png-256/girl-woman-avatar-emoji-happy-people-kid-1659504-1410026.png")
+                  )
+                ),
+              )
+            ],
           )
-        ),
+        ],
       ),
     );
   }
